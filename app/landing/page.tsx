@@ -27,24 +27,36 @@ export default function Landing() {
           <h1 className="mb-4 text-6xl font-bold text-white drop-shadow-lg md:text-7xl">
             Brain Lens
           </h1>
-          <p className="mb-2 text-xl text-white md:text-2xl">
-            AI-Powered Live Tutor
+          <p className="mb-2 text-xl font-semibold text-cyan-50 md:text-3xl">
+            The AI tutor that sees, speaks, and guides.
           </p>
-          <p className="mx-auto max-w-2xl text-lg text-white/95">
-            Step-by-step problem solving with real-time vision, voice, and personalized feedback
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+            Don't just get the answer—understand the <em>why</em>. A real-time, multimodal AI companion that helps you master math and science step-by-step.
           </p>
-          <div className="mt-8 flex items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link href="/tutor">
+              <Button
+                variant="ghost"
+                size="lg"
+                className="rounded-full bg-white px-8 py-6 text-lg font-bold text-cyan-700 shadow-2xl shadow-cyan-900/20 transition-transform duration-300 hover:scale-[1.05] hover:bg-cyan-50"
+              >
+                Start Learning Now
+              </Button>
+            </Link>
             <a
-              href="#features"
-              className="rounded-full border border-white/50 bg-white/20 px-5 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/30"
+              href="#how-it-works"
+              className="rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
             >
-              Explore features
+              See how it works ↓
             </a>
           </div>
         </header>
 
         {/* Features Grid */}
-        <div id="features" className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div 
+          id="features" 
+          className="m-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
+        >
           {[
             {
               icon: Camera,
@@ -85,63 +97,51 @@ export default function Landing() {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="reveal-up mb-16 rounded-3xl border border-white/30 bg-white/15 p-8 backdrop-blur-md md:p-12" style={{ animationDelay: '0.45s' }}>
-          <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-            <div>
-              <h2 className="mb-4 text-4xl font-bold text-slate-900">
-                How It Works
-              </h2>
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 shrink-0 rounded-full bg-teal-500 font-bold text-white flex items-center justify-center shadow-lg shadow-teal-900/25">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Point Camera</h3>
-                    <p className="text-slate-700">Show the tutor your math problem</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 shrink-0 rounded-full bg-teal-500 font-bold text-white flex items-center justify-center shadow-lg shadow-teal-900/25">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Work Step-by-Step</h3>
-                    <p className="text-slate-700">Capture each solution step as you write</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 shrink-0 rounded-full bg-teal-500 font-bold text-white flex items-center justify-center shadow-lg shadow-teal-900/25">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Get Guidance</h3>
-                    <p className="text-slate-700">
-                      Receive hints, corrections, and encouragement
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 shrink-0 rounded-full bg-teal-500 font-bold text-white flex items-center justify-center shadow-lg shadow-teal-900/25">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Learn &amp; Master</h3>
-                    <p className="text-slate-700">Understand the reasoning, not just the answer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* How It Works Section */}
+        <div id="how-it-works" className="reveal-up mb-20 space-y-12">
+          <div className="text-center text-white">
+            <h2 className="mb-4 text-4xl font-bold">Why Brain Lens?</h2>
+            <p className="mx-auto max-w-2xl text-lg opacity-90">
+              Existing tools just spit out the answer (<code className="bg-white/10 px-1 py-0.5 rounded">x = 42</code>), creating dependency. Brain Lens is your real-time reasoning partner.
+            </p>
+          </div>
 
-            <div className="aspect-video rounded-2xl bg-linear-to-br from-cyan-300 to-emerald-300 flex items-center justify-center ring-1 ring-white/35 shadow-2xl shadow-cyan-900/20">
-              <div className="text-center">
-                <Camera className="w-20 h-20 text-white opacity-50 mx-auto mb-4" />
-                <p className="text-white font-semibold opacity-75">
-                  Live tutor preview
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+             {/* Step 1 */}
+             <div className="group relative overflow-hidden rounded-3xl bg-white/10 p-8 backdrop-blur-md transition-all hover:bg-white/20">
+                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-cyan-400/20 blur-2xl group-hover:bg-cyan-400/30" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/20 text-cyan-100">
+                  <Camera className="h-6 w-6" />
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-white">1. Vision</h3>
+                <p className="text-white/80">
+                  Point your camera at <strong>any problem</strong>—math, physics, or code. The AI sees what you see in real-time.
                 </p>
-              </div>
-            </div>
+             </div>
+
+             {/* Step 2 */}
+             <div className="group relative overflow-hidden rounded-3xl bg-white/10 p-8 backdrop-blur-md transition-all hover:bg-white/20">
+                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-emerald-400/20 blur-2xl group-hover:bg-emerald-400/30" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-100">
+                  <Mic className="h-6 w-6" />
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-white">2. Voice</h3>
+                <p className="text-white/80">
+                  Ask questions naturally: <em>"I'm stuck on this integral."</em> No typing needed—just talk like you would to a friend.
+                </p>
+             </div>
+
+             {/* Step 3 */}
+             <div className="group relative overflow-hidden rounded-3xl bg-white/10 p-8 backdrop-blur-md transition-all hover:bg-white/20">
+                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-amber-400/20 blur-2xl group-hover:bg-amber-400/30" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/20 text-amber-100">
+                  <BookOpen className="h-6 w-6" />
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-white">3. Guidance</h3>
+                <p className="text-white/80">
+                  Receive personalized hints and feedback. The AI guides you to the solution <strong>without</strong> giving it away.
+                </p>
+             </div>
           </div>
         </div>
 
@@ -149,8 +149,9 @@ export default function Landing() {
         <div className="reveal-up mb-16 text-center" style={{ animationDelay: '0.58s' }}>
           <Link href="/tutor">
             <Button
+              variant="ghost"
               size="lg"
-              className="bg-white px-12 py-6 text-lg font-bold text-cyan-700 shadow-2xl shadow-cyan-900/20 transition-transform duration-300 hover:scale-[1.02] hover:bg-cyan-50"
+              className="rounded-full bg-white px-12 py-6 text-lg font-bold text-cyan-700 shadow-2xl shadow-cyan-900/20 transition-transform duration-300 hover:scale-[1.02] hover:bg-cyan-50"
             >
               Start Learning Now →
             </Button>

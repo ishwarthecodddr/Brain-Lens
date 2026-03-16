@@ -53,7 +53,7 @@ export default function TutorPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-green-50 to-yellow-50">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-green-50 to-yellow-50">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="flex items-center justify-between mb-8">
           <header className="flex-1">
