@@ -225,13 +225,12 @@ If correct, confirm it briefly and ask for my next step.`;
         </div>
         <div className="flex gap-2">
           <Input
-            className="text-black"
+            className="flex-1 text-black"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message or use voice..."
-            className="flex-1"
             disabled={isLoading}
+            placeholder="Type your message..."
           />
           <LiveVoiceButton
             problem={problem}
