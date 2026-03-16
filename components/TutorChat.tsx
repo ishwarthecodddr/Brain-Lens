@@ -225,6 +225,7 @@ If correct, confirm it briefly and ask for my next step.`;
         </div>
         <div className="flex gap-2">
           <Input
+            className="text-black"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
